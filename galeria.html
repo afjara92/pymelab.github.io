@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Edificio Experimental PymeLab</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        /* Estilos del modal */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            padding-top: 120px; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Edificio Experimental PymeLab</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre.html">Sobre PymeLab</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="equipo.html">Equipo</a></li>
+                <li><a href="investigacion.html">Publicaciones</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Galería Proceso Construcción</h2>
+            <div class="gallery">
+                <img src="Fotos_Montaje/img1.jpg" alt="Foto 1" onclick="openModal(0)">
+                <img src="Fotos_Montaje/img2.jpg" alt="Foto 2" onclick="openModal(1)">
+                <img src="Fotos_Montaje/img3.jpg" alt="Foto 3" onclick="openModal(2)">
+                <img src="Fotos_Montaje/img4.jpg" alt="Foto 4" onclick="openModal(3)">
+                <img src="Fotos_Montaje/img5.jpg" alt="Foto 5" onclick="openModal(4)">
+                <img src="Fotos_Montaje/img6.jpg" alt="Foto 6" onclick="openModal(5)">
+                <img src="Fotos_Montaje/img7.jpg" alt="Foto 7" onclick="openModal(6)">
+                <img src="Fotos_Montaje/img8.jpg" alt="Foto 8" onclick="openModal(7)">
+                <img src="Fotos_Montaje/img9.jpg" alt="Foto 9" onclick="openModal(8)">
+                <img src="Fotos_Montaje/img10.jpg" alt="Foto 10" onclick="openModal(9)">
+                <img src="Fotos_Montaje/img11.jpg" alt="Foto 11" onclick="openModal(10)">
+                <img src="Fotos_Montaje/img12.jpg" alt="Foto 12" onclick="openModal(11)">
+                <img src="Fotos_Montaje/img13.jpg" alt="Foto 13" onclick="openModal(12)">
+                <img src="Fotos_Montaje/img14.jpg" alt="Foto 14" onclick="openModal(13)">
+                <img src="Fotos_Montaje/img15.jpg" alt="Foto 15" onclick="openModal(14)">
+                <img src="Fotos_Montaje/img16.jpg" alt="Foto 16" onclick="openModal(15)">
+                <img src="Fotos_Montaje/img17.jpg" alt="Foto 17" onclick="openModal(16)">
+                <img src="Fotos_Montaje/img18.jpg" alt="Foto 18" onclick="openModal(17)">
+                <img src="Fotos_Montaje/img19.jpg" alt="Foto 19" onclick="openModal(18)">
+                <img src="Fotos_Montaje/img20.jpg" alt="Foto 20" onclick="openModal(19)">
+                <img src="Fotos_Montaje/img21.jpg" alt="Foto 21" onclick="openModal(20)">
+                <img src="Fotos_Montaje/img22.jpg" alt="Foto 22" onclick="openModal(21)">
+                <img src="Fotos_Montaje/img23.jpg" alt="Foto 23" onclick="openModal(22)">
+                <img src="Fotos_Montaje/img24.jpg" alt="Foto 24" onclick="openModal(23)">
+                <img src="Fotos_Montaje/img25.jpg" alt="Foto 25" onclick="openModal(24)">
+                <img src="Fotos_Montaje/img26.jpg" alt="Foto 26" onclick="openModal(25)">
+                <img src="Fotos_Montaje/img27.jpg" alt="Foto 27" onclick="openModal(26)">
+                <img src="Fotos_Montaje/img28.jpg" alt="Foto 28" onclick="openModal(27)">
+                <img src="Fotos_Montaje/img29.jpg" alt="Foto 29" onclick="openModal(28)">
+                <img src="Fotos_Montaje/img30.jpg" alt="Foto 30" onclick="openModal(29)">
+                <img src="Fotos_Montaje/img31.jpg" alt="Foto 31" onclick="openModal(30)">
+                <img src="Fotos_Montaje/img32.jpg" alt="Foto 32" onclick="openModal(31)">
+                <img src="Fotos_Montaje/img33.jpg" alt="Foto 33" onclick="openModal(32)">
+                <img src="Fotos_Montaje/img34.jpg" alt="Foto 34" onclick="openModal(33)">
+                <img src="Fotos_Montaje/img35.jpg" alt="Foto 35" onclick="openModal(34)">
+                <img src="Fotos_Montaje/img36.jpg" alt="Foto 36" onclick="openModal(35)">
+                <img src="Fotos_Montaje/img37.jpg" alt="Foto 37" onclick="openModal(36)">
+                <img src="Fotos_Montaje/img38.jpg" alt="Foto 38" onclick="openModal(37)">
+                <img src="Fotos_Montaje/img39.jpg" alt="Foto 39" onclick="openModal(38)">
+                <img src="Fotos_Montaje/img40.jpg" alt="Foto 40" onclick="openModal(39)">
+                <img src="Fotos_Montaje/img41.jpg" alt="Foto 41" onclick="openModal(40)">
+                <img src="Fotos_Montaje/img42.jpg" alt="Foto 42" onclick="openModal(41)">
+                <img src="Fotos_Montaje/img43.jpg" alt="Foto 43" onclick="openModal(42)">
+                <img src="Fotos_Montaje/img44.jpg" alt="Foto 44" onclick="openModal(43)">
+                <img src="Fotos_Montaje/img45.jpg" alt="Foto 45" onclick="openModal(44)">
+                <img src="Fotos_Montaje/img46.jpg" alt="Foto 46" onclick="openModal(45)">
+                <img src="Fotos_Montaje/img47.jpg" alt="Foto 47" onclick="openModal(46)">
+                <img src="Fotos_Montaje/img48.jpg" alt="Foto 48" onclick="openModal(47)">
+                <img src="Fotos_Montaje/img49.jpg" alt="Foto 49" onclick="openModal(48)">
+                <img src="Fotos_Montaje/img50.jpg" alt="Foto 50" onclick="openModal(49)">
+                <img src="Fotos_Montaje/img51.jpg" alt="Foto 51" onclick="openModal(50)">
+                <img src="Fotos_Montaje/img52.jpg" alt="Foto 52" onclick="openModal(51)">
+                <img src="Fotos_Montaje/img53.jpg" alt="Foto 53" onclick="openModal(52)">
+                <img src="Fotos_Montaje/img54.jpg" alt="Foto 54" onclick="openModal(53)">
+                <img src="Fotos_Montaje/img55.jpg" alt="Foto 55" onclick="openModal(54)">
+                <img src="Fotos_Montaje/img56.jpg" alt="Foto 56" onclick="openModal(55)">
+                <img src="Fotos_Montaje/img57.jpg" alt="Foto 57" onclick="openModal(56)">
+                <img src="Fotos_Montaje/img58.jpg" alt="Foto 58" onclick="openModal(57)">
+                <img src="Fotos_Montaje/img59.jpg" alt="Foto 59" onclick="openModal(58)">
+                <img src="Fotos_Montaje/img60.jpg" alt="Foto 60" onclick="openModal(59)">
+                <img src="Fotos_Montaje/img61.jpg" alt="Foto 61" onclick="openModal(60)">
+                <img src="Fotos_Montaje/img62.jpg" alt="Foto 62" onclick="openModal(61)">
+                <img src="Fotos_Montaje/img63.jpg" alt="Foto 63" onclick="openModal(62)">
+                <img src="Fotos_Montaje/img64.jpg" alt="Foto 64" onclick="openModal(63)">
+                <img src="Fotos_Montaje/img65.jpg" alt="Foto 65" onclick="openModal(64)">
+                <img src="Fotos_Montaje/img66.jpg" alt="Foto 66" onclick="openModal(65)">
+                <img src="Fotos_Montaje/img67.jpg" alt="Foto 67" onclick="openModal(66)">
+                <img src="Fotos_Montaje/img68.jpg" alt="Foto 68" onclick="openModal(67)">
+                <img src="Fotos_Montaje/img69.jpg" alt="Foto 69" onclick="openModal(68)">
+                <img src="Fotos_Montaje/img70.jpg" alt="Foto 70" onclick="openModal(69)">
+                <img src="Fotos_Montaje/img71.jpg" alt="Foto 71" onclick="openModal(70)">
+                <img src="Fotos_Montaje/img72.jpg" alt="Foto 72" onclick="openModal(71)">
+                <img src="Fotos_Montaje/img73.jpg" alt="Foto 73" onclick="openModal(72)">
+                <img src="Fotos_Montaje/img74.jpg" alt="Foto 74" onclick="openModal(73)">
+                <img src="Fotos_Montaje/img75.jpg" alt="Foto 75" onclick="openModal(74)">
+                <img src="Fotos_Montaje/img76.jpg" alt="Foto 76" onclick="openModal(75)">
+                <img src="Fotos_Montaje/img77.jpg" alt="Foto 77" onclick="openModal(76)">
+                <img src="Fotos_Montaje/img78.jpg" alt="Foto 78" onclick="openModal(77)">
+                <img src="Fotos_Montaje/img79.jpg" alt="Foto 79" onclick="openModal(78)">
+                <img src="Fotos_Montaje/img80.jpg" alt="Foto 80" onclick="openModal(79)">
+                <img src="Fotos_Montaje/img81.jpg" alt="Foto 81" onclick="openModal(80)">
+                <img src="Fotos_Montaje/img82.jpg" alt="Foto 82" onclick="openModal(81)">
+                <img src="Fotos_Montaje/img83.jpg" alt="Foto 83" onclick="openModal(82)">
+                <img src="Fotos_Montaje/img84.jpg" alt="Foto 84" onclick="openModal(83)">
+                <img src="Fotos_Montaje/img85.jpg" alt="Foto 85" onclick="openModal(84)">
+                <img src="Fotos_Montaje/img86.jpg" alt="Foto 86" onclick="openModal(85)">
+                <img src="Fotos_Montaje/img87.jpg" alt="Foto 87" onclick="openModal(86)">
+                <img src="Fotos_Montaje/img88.jpg" alt="Foto 88" onclick="openModal(87)">
+                <img src="Fotos_Montaje/img89.jpg" alt="Foto 89" onclick="openModal(88)">
+                <img src="Fotos_Montaje/img90.jpg" alt="Foto 90" onclick="openModal(89)">
+                <img src="Fotos_Montaje/img91.jpg" alt="Foto 91" onclick="openModal(90)">
+                <img src="Fotos_Montaje/img92.jpg" alt="Foto 92" onclick="openModal(91)">
+                <img src="Fotos_Montaje/img93.jpg" alt="Foto 93" onclick="openModal(92)">
+                <img src="Fotos_Montaje/img94.jpg" alt="Foto 94" onclick="openModal(93)">
+                <img src="Fotos_Montaje/img95.jpg" alt="Foto 95" onclick="openModal(94)">
+                <img src="Fotos_Montaje/img96.jpg" alt="Foto 96" onclick="openModal(95)">
+                <img src="Fotos_Montaje/img97.jpg" alt="Foto 97" onclick="openModal(96)">
+                <img src="Fotos_Montaje/img98.jpg" alt="Foto 98" onclick="openModal(97)">
+                <img src="Fotos_Montaje/img99.jpg" alt="Foto 99" onclick="openModal(98)">
+                <img src="Fotos_Montaje/img100.jpg" alt="Foto 100" onclick="openModal(99)">
+                <img src="Fotos_Montaje/img101.jpg" alt="Foto 101" onclick="openModal(100)">
+                <img src="Fotos_Montaje/img102.jpg" alt="Foto 102" onclick="openModal(101)">
+                <img src="Fotos_Montaje/img103.jpg" alt="Foto 103" onclick="openModal(102)">
+                <img src="Fotos_Montaje/img104.jpg" alt="Foto 104" onclick="openModal(103)">
+                <img src="Fotos_Montaje/img105.jpg" alt="Foto 105" onclick="openModal(104)">
+                <img src="Fotos_Montaje/img106.jpg" alt="Foto 106" onclick="openModal(105)">
+                <img src="Fotos_Montaje/img107.jpg" alt="Foto 107" onclick="openModal(106)">
+                <img src="Fotos_Montaje/img108.jpg" alt="Foto 108" onclick="openModal(107)">
+                <img src="Fotos_Montaje/img109.jpg" alt="Foto 109" onclick="openModal(108)">
+                <img src="Fotos_Montaje/img110.jpg" alt="Foto 110" onclick="openModal(109)">
+                <img src="Fotos_Montaje/img111.jpg" alt="Foto 111" onclick="openModal(110)">
+                <img src="Fotos_Montaje/img112.jpg" alt="Foto 112" onclick="openModal(111)">
+                <img src="Fotos_Montaje/img113.jpg" alt="Foto 113" onclick="openModal(112)">
+                <img src="Fotos_Montaje/img114.jpg" alt="Foto 114" onclick="openModal(113)">
+                <img src="Fotos_Montaje/img115.jpg" alt="Foto 115" onclick="openModal(114)">
+                <img src="Fotos_Montaje/img116.jpg" alt="Foto 116" onclick="openModal(115)">
+                <img src="Fotos_Montaje/img117.jpg" alt="Foto 117" onclick="openModal(116)">
+                <img src="Fotos_Montaje/img118.jpg" alt="Foto 118" onclick="openModal(117)">
+                <img src="Fotos_Montaje/img119.jpg" alt="Foto 119" onclick="openModal(118)">
+                <img src="Fotos_Montaje/img120.jpg" alt="Foto 120" onclick="openModal(119)">
+                <img src="Fotos_Montaje/img121.jpg" alt="Foto 121" onclick="openModal(120)">
+                <img src="Fotos_Montaje/img122.jpg" alt="Foto 122" onclick="openModal(121)">
+                <img src="Fotos_Montaje/img123.jpg" alt="Foto 123" onclick="openModal(122)">
+                <img src="Fotos_Montaje/img124.jpg" alt="Foto 124" onclick="openModal(123)">
+                <img src="Fotos_Montaje/img125.jpg" alt="Foto 125" onclick="openModal(124)">
+                <img src="Fotos_Montaje/img126.jpg" alt="Foto 126" onclick="openModal(125)">
+                <img src="Fotos_Montaje/img127.jpg" alt="Foto 127" onclick="openModal(126)">
+                <img src="Fotos_Montaje/img128.jpg" alt="Foto 128" onclick="openModal(127)">
+                <img src="Fotos_Montaje/img129.jpg" alt="Foto 129" onclick="openModal(128)">
+                <img src="Fotos_Montaje/img130.jpg" alt="Foto 130" onclick="openModal(129)">
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage">
+        </div>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.gallery img');
+
+        function openModal(index) {
+            currentImageIndex = index;
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("modalImage").src = images[currentImageIndex].src;
+            document.addEventListener('keydown', handleKeyDown);
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+            document.removeEventListener('keydown', handleKeyDown);
+        }
+
+        function handleKeyDown(e) {
+            if (e.key === 'ArrowRight') {
+                showNextImage();
+            } else if (e.key === 'ArrowLeft') {
+                showPrevImage();
+            } else if (e.key === 'Escape') {
+                closeModal();
+            }
+        }
+
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.getElementById("modalImage").src = images[currentImageIndex].src;
+        }
+
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            document.getElementById("modalImage").src = images[currentImageIndex].src;
+        }
+    </script>
+</body>
+</html>

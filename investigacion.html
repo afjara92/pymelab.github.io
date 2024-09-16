@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaciones - Edificio Experimental PymeLab</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .research-list {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .research-item {
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .research-item:hover {
+            background-color: #ddd;
+        }
+
+        .research-item h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: rgb(24, 56, 89);
+        }
+
+        .research-item p {
+            margin: 0.5rem 0 0;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .abstract {
+            display: none;
+            margin-top: 1rem;
+            background-color: white;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .abstract.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Edificio Experimental PymeLab</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre.html">Sobre PymeLab</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="equipo.html">Equipo</a></li>
+                <li><a href="investigacion.html">Publicaciones</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Publicaciones</h2>
+            <div class="research-list">
+                <div class="research-item" onclick="toggleAbstract(this)">
+                    <h3 style="text-align: justify;">Seguimiento de las propiedades modales de un edificio de CLT de mediana altura durante el montaje por medio de vibraciones ambientales</h3>
+                    <p>Autores: Franco Benedetti, Alan Jara-Cisterna, Alexander Opazo-Vega, Víctor Rosales Garcés</p>
+                    <p>Congreso: CIMAD 24 - III Congreso Ibero-Latinoamericano de la Madera en la Construcción</p>
+                    <p>Lugar: Madrid, España - Junio 2024</p>
+                    <div class="abstract">
+                        <p style="text-align: justify;">El entendimiento del comportamiento dinámico de las estructuras de CLT es esencial para su implementación en diferentes contextos, en especial en zonas de alta sismicidad. Si bien se han desarrollado avances, aún es incipiente el estudio de ciertos aspectos, como la caracterización dinámica durante los procesos de montaje y construcción, lo que podría ayudar a la detección oportuna de problemas y la rápida toma de decisiones. Este trabajo analiza la variación de las propiedades dinámicas de un edificio prototipo de CLT de 5 niveles durante el proceso de montaje. Se considera una campaña de mediciones de vibración ambiental y la aplicación de técnicas de análisis modal operacional para diferentes estados de avance de la obra, partiendo del montaje del esqueleto estructural de CLT, la instalación de revestimientos hasta el retiro de las estructuras temporales. Se logran identificar los tres modos de vibrar predominantes, dos de traslación y uno torsional, además de la evolución de los períodos según el avance constructivo. Se observa que la colocación de revestimientos genera inicialmente una rigidización en el sistema, pero a medida que se avanza en la instalación de terminaciones, la masa adicional hace crecer los períodos hasta en un 13.3% con respecto a una condición con sólo el esqueleto estructural. Adicionalmente, se realiza una comparativa de los períodos experimentales con los calculados usando fórmulas aproximadas y con modelos de elementos finitos, observando un buen ajuste con los métodos aproximados, pero diferencias con los modelos según sea el enfoque de modelación</p>
+                    </div>
+                </div>
+                <div class="research-item" onclick="toggleAbstract(this)">
+                    <h3 style="text-align: justify;">Vibration-Based Monitoring of a 5-Story Cross-Laminated Timber (CLT) Building Prototype</h3>
+                    <p>Autores: Alexander Opazo-Vega, Franco Benedetti, Alan Jara-Cisterna</p>
+                    <p>Publicado en: Experimental Vibration Analysis for Civil Engineering Structures</p>
+                    <p>Lugar: Agosto 2023, DOI: <a href="https://doi.org/10.1007/978-3-031-39109-5_22" target="_blank">10.1007/978-3-031-39109-5_22</a></p>
+                    <div class="abstract">
+                        <p style="text-align: justify;">The construction of buildings with cross-laminated timber (CLT) panels has grown steadily in recent years, mainly because of the environmental advantages of wood over other building materials. However, there are still doubts about the dynamic behavior of CLT buildings in countries with high seismicity and how their dynamic properties vary with temperature and relative humidity changes. The present work shows the modal properties’ monitoring of a 5-story CLT building prototype. The prototype building is located in Chile and has dimensions of 4.04 m, 6.44 m, and 14.5 m for width, length, and height, respectively. The CLT panels are made of radiata pine wood, and the joints between panels were executed with self-drilling screws and metal hardware (hold-down and angle-bracket). The CLT building was instrumented with ten uniaxial accelerometers (model PCB393B12) distributed on different floors and directions to measure the lateral dynamic response to environmental vibrations. The five main frequencies, damping ratios, and modal shapes were estimated through the operational modal analysis methods EFDD and SSI. Preliminary results suggest that, on average, the lateral and torsional frequencies measured in the CLT building were between 3.13 Hz and 13.88 Hz. These experimental results will allow a process of calibration and updating of finite element models of this type of buildings for their subsequent incorporation into Chilean structural design recommendations.</p>
+                    </div>
+                </div>
+                <div class="research-item" onclick="toggleAbstract(this)">
+                    <h3 style="text-align: justify;">Nonlinear Modeling of Midrise Cross-Laminated Timber Buildings Through Parallel and Sequential Computing Techniques</h3>
+                    <p>Autores: Franco Benedetti, Alan Jara-Cisterna, Sergio Meza, Jaime Castillo, Euro L Casanova</p>
+                    <p>Publicado en: Proceedings of the 2022 Eurasian OpenSees Days</p>
+                    <p>Lugar: Abril 2023, DOI: <a href="https://doi.org/10.1007/978-3-031-30125-4_35" target="_blank">10.1007/978-3-031-30125-4_35</a></p>
+                    <div class="abstract">
+                        <p style="text-align: justify;">The seismic analysis of mass timber structures through numerical models is challenging due to the system's large number of nonlinear components and the complex failure mechanisms developed. Additionally, if long-duration megathrust earthquake recordings need to be considered, the time consumption of the computation increases significantly. Therefore, refined and advanced nonlinear numerical models that demand high computation capacity need to be considered. In order to analyze the lateral behavior of Cross-Laminated-Timber structures, detailed coupled three-dimensional numerical models were developed in OpenSeesMP. Every component of the CLT system was included (walls, slabs, screws, and mechanical connections), as well as the friction and contact interaction at the foundation floor slabs and the wall-to-wall interface. The numerical models’ size was around 120.000 DOF. In this research, sequential and parallel modeling techniques were compared using standard desktop PCs (8 cores i7 processor). For the implementation of the parallel models, a static decomposition approach was used. Eight and three cores were employed to perform the analyses; therefore, the parallelization considers the segmentation into three and eight subdomains, respectively. A total of 6-time history analyses using long-duration subduction earthquake recordings for each case of study were performed. Main results show that there is a 50%-time reduction in the parallel with respect to the sequential modeling approach. However, increasing from three to eight processing cores marginally improves the performance of the numerical models.</p>
+                    </div>
+                </div>
+                <div class="research-item" onclick="toggleAbstract(this)">
+                    <h3 style="text-align: justify;">Incremental Dynamic Analysis of a Five Storeys CLT Building Designed Through Force-Based Methods</h3>
+                    <p>Autores: Franco Benedetti, Tomás Valenzuela, Alan Jara-Cisterna, Alexander Opazo-Vega, Víctor Rosales</p>
+                    <p>Publicado en: World Conference on Timber Engineering</p>
+                    <p>Lugar: Oslo, 2023, DOI: <a href="http://dx.doi.org/10.52202/069179-0310" target="_blank">10.52202/069179-0310</a></p>
+                    <div class="abstract">
+                        <p style="text-align: justify;">Since the large seismic demands in Chile, there is a high level of uncertainty regarding the seismic safety behavior of timber structures. Besides, in the last decade, there has been a worldwide rise in the construction of cross-laminated timber (CLT) buildings, explained by the ease of industrialization of CLT panels and for being a sustainable material. However, its massification in high earthquake-prone zones is still under development. This research analyzes the seismic fragility of a 5-story CLT building designed by Chilean force-based code regulations by means of Static Nonlinear Analysis and Incremental Dynamic Analysis. For IDA curves, a set of 540 nonlinear time-history analyses were performed using parallel computing tools. The main results show that for the collapse of the building to occur, large pseudo-acceleration values need to be reached. Besides, the collapse margin ratio (CMR) is calculated for the two principal directions, achieving values larger than 3 for 50% collapse probability. These results suggest a large margin of seismic safety of the CLT building designed in this research.</p>
+                    </div>
+                </div>
+                <div class="research-item" onclick="toggleAbstract(this)">
+                    <h3 style="text-align: justify;">Associativity between SMEs towards mid-rise building timber construction: PymeLab Project</h3>
+                    <p>Autores: V Rosales, F Benedetti, M Suazo, M Vargas, I Rojas, A Jara, A Rebolledo</p>
+                    <p>Publicado en: World Conference on Timber Engineering</p>
+                    <p>Fecha de publicación: 2021, Páginas: 9-12</p>
+                    <div class="abstract">
+                        <p style="text-align: justify;">At a global level, the mid-rise timber construction is closely linked to sustainability and innovation processes. At present, in Chile, it is not possible to construct wooden buildings because the national regulations don’t consider this system. Furthermore, SMEs show low indexes of innovations and knowledge. Within this context, the University of Bío-Bío, in association with SMEs, develop the PymeLAB-Madera Project, which promotes a multidisciplinary network aiming to increase the innovation and associativity of the timber-related companies in the Biobio Region. One of the main activities to encourage an environment of association and innovation is the collaborative design and construction of a timber mid-rise building in CLT. This building will also be an innovation platform because it will be used as a laboratory for product test and prototyping. It is expected that the whole process of collaborative work tends to strengthen the business ecosystem and promote a culture of collaboration for the development of more complex products by SME companies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleAbstract(element) {
+            const abstract = element.querySelector('.abstract');
+            abstract.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

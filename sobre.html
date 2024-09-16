@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edificio Experimental PymeLab</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .text-column {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .model-column {
+            flex: 1;
+        }
+
+        .project-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            font-size: 16px;
+            color: #333;
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 500px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Edificio Experimental PymeLab</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre.html">Sobre PymeLab</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="equipo.html">Equipo</a></li>
+                <li><a href="investigacion.html">Publicaciones</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Sobre PymeLab</h2>
+            <div class="container">
+                <div class="text-column">
+                    <p style="text-align: justify;">
+                    PymeLab es un proyecto financiado por CORFO enfocado en la innovación, prototipado y experimentación en la construcción con madera. PymeLab reunió a un conjunto diverso de empresas pequeñas y medianas empresas.
+                    </p>
+                    <img src="pymelab_empresas.png" alt="Imagen del proyecto PymeLab" class="project-image">
+                </div>
+                <div class="model-column">
+                    <model-viewer src="Pymelab.glb" alt="Modelo 3D del Edificio PymeLab" auto-rotate camera-controls></model-viewer>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
