@@ -13,31 +13,26 @@
             margin: 0;
             padding: 0;
         }
-
+    
         .container {
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
             gap: 20px;
             padding: 20px;
         }
 
-        .text-column {
-            flex: 1;
-            padding-right: 20px;
+        .text-column, .model-column {
+            width: 100%; 
+            max-width: 1000px; 
         }
-
-        .model-column {
-            flex: 1;
-        }
-
+    
         .project-image {
             width: 100%;
             height: auto;
             margin-bottom: 15px;
         }
-
+    
         .description {
             font-size: 16px;
             color: #333;
@@ -47,6 +42,18 @@
             width: 100%;
             height: 500px;
             background-color: #f4f4f4;
+        }
+
+        @media (max-width: 768px) {
+            model-viewer {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            model-viewer {
+                height: 300px;
+            }
         }
     </style>
 </head>
@@ -72,7 +79,7 @@
             <div class="container">
                 <div class="text-column">
                     <p style="text-align: justify;">
-                    PymeLab es un proyecto financiado por CORFO enfocado en la innovación, prototipado y experimentación en la construcción con madera. PymeLab reunió a un conjunto diverso de empresas pequeñas y medianas empresas.
+                        PymeLab es un proyecto financiado por CORFO enfocado en la innovación, prototipado y experimentación en la construcción con madera. PymeLab reunió a un conjunto diverso de empresas pequeñas y medianas empresas.
                     </p>
                     <img src="pymelab_empresas.png" alt="Imagen del proyecto PymeLab" class="project-image">
                 </div>

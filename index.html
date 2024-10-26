@@ -7,54 +7,13 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
-    
-    <style>
-    .content {
-        display: flex;
-        justify-content: flex-start; 
-        align-items: flex-start; 
-        margin-top: 20px;
-        gap: 20px; 
-    }
-
-    .content img {
-        max-width: 40%; 
-        height: auto;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .text-and-video {
-        max-width: 55%;
-        margin-left: auto; 
-    }
-
-    .text-and-video h2 {
-        font-size: 2rem; 
-        color: rgb(24, 56, 89); 
-    }
-
-    .text-and-video p {
-        margin: 0 0 20px;
-    }
-
-    .text-and-video iframe {
-        width: 100%;
-        height: 315px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-    }
-
-    .text-and-video iframe:fullscreen {
-        width: 100vw;
-        height: 100vh;
-    }
-    </style>
 </head>
 <body>
     <header>
         <h1>Edificio Experimental PymeLab</h1>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
         <nav>
-            <ul>
+            <ul class="menu">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="sobre.html">Sobre PymeLab</a></li>
                 <li><a href="galeria.html">Galería</a></li>
@@ -75,10 +34,17 @@
                     <p style="text-align: justify;">
                         El proyecto PymeLab, desarrollado entre 2019 y 2022, fue una colaboración entre la Universidad del Bío-Bío y varias empresas del sector maderero. El proyecto culminó con la construcción de un edificio experimental de cinco pisos en madera contralaminada (CLT) de pino radiata, único en Latinoamérica, con una superficie de 130 metros cuadrados. Esta torre, no habitable, funciona como un laboratorio vivo, permitiendo el monitoreo de variables técnicas para impulsar la normativa en construcción en madera y fortalecer la capacidad innovadora de las pymes madereras regionales.
                     </p>
-                    <iframe src="https://www.youtube.com/embed/CYBNYYKhb0s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen onclick="this.requestFullscreen()"></iframe>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/CYBNYYKhb0s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
