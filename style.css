@@ -47,13 +47,13 @@ header .logo-right {
 
 .menu-toggle {
   display: none;
-  font-size: 3rem;
+  font-size: 2rem;
   background: none;
   border: none;
   color: white;
   position: absolute;
-  top: 35px;
-  right: 10px;
+  top: 50px;
+  right: 5px;
   cursor: pointer;
 }
 
