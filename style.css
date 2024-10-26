@@ -165,3 +165,36 @@ a.button:hover {
       font-size: 0.8rem;
     }
   }
+
+@media only screen and (max-width: 768px) {
+  .content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .content img {
+      max-width: 90%; 
+      height: auto;
+  }
+
+  .text-and-video {
+      max-width: 100%; 
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .content img {
+      max-width: 100%; 
+      height: auto;
+  }
+
+  .text-and-video {
+      max-width: 100%;
+      margin-left: 0; 
+  }
+}
