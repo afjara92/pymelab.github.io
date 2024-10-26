@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publicaciones - Edificio Experimental PymeLab</title>
+    <title>Publicaciones - Torre CLT Pymelab</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         .research-list {
-            max-width: 1200px;
+            max-width: 1600px;
             margin: 0 auto;
             padding: 1rem;
         }
@@ -56,7 +56,8 @@
 </head>
 <body>
     <header>
-        <h1>Edificio Experimental PymeLab</h1>
+        <h1>Torre CLT PymeLab</h1>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -74,6 +75,17 @@
         <section>
             <h2>Publicaciones</h2>
             <div class="research-list">
+                <div class="research-item" onclick="toggleAbstract(this)">
+                    <h3 style="text-align: justify;">Vibration-based monitoring of a cross-laminated timber building in a high seismicity zone</h3>
+                    <p>Autores: Alan Jara-Cisterna, Franco Benedetti, Víctor Rosales, José Luis Almazán, Alexander Opazo-Vega</p>
+                    <p>Publicado en: Journal of Civil Structural Health Monitoring (Springer, 2024)</p>
+                    <p>DOI: <a href="https://doi.org/10.1007/s13349-024-00862-1" target="_blank">https://doi.org/10.1007/s13349-024-00862-1</a></p>
+                    <div class="abstract">
+                        <p style="text-align: justify;">
+                            Cross-laminated timber (CLT) buildings have emerged as an alternative to make more sustainable and resilient cities. However, very few cases of vibration-based monitoring of these buildings have been reported. This paper discusses the variation of the dynamic properties of a 5-story cross-laminated timber (CLT) building through vibration-based monitoring over 23 months. The building combines different construction systems, is relatively slender for its type, and was built in a high seismicity zone. The monitoring strategy included periodic measurements of the dynamic properties during construction, reference measurements with high-sensitivity accelerometers, and 10 months of continuous measurements with low-cost equipment. In addition, continuous measurements allowed the analysis of the dynamic properties during special events associated with wind gusts and moderate-intensity earthquakes. During the construction stage monitoring and reference measurements, up to 5 modal shapes of the building with their respective vibration frequencies and damping ratios were detected. These dynamic properties allowed the calibration of a simplified numerical model of the building. Subsequently, during the continuous monitoring phase of the building, it was observed that the first two translation frequencies varied by up to 8% due to changes in climatic conditions and the moisture content of the timber. Finally, monitoring during a 5.4 Mw earthquake showed that vibration frequencies temporarily decreased by up to 15% and returned to their initial value after the seismic event had passed. The results of this research will contribute to the knowledge of the dynamic response of this type of building and the updating of their structural design codes.
+                        </p>
+                    </div>
+                </div>
                 <div class="research-item" onclick="toggleAbstract(this)">
                     <h3 style="text-align: justify;">Seguimiento de las propiedades modales de un edificio de CLT de mediana altura durante el montaje por medio de vibraciones ambientales</h3>
                     <p>Autores: Franco Benedetti, Alan Jara-Cisterna, Alexander Opazo-Vega, Víctor Rosales Garcés</p>
@@ -122,6 +134,12 @@
             </div>
         </section>
     </main>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+
 
     <script>
         function toggleAbstract(element) {

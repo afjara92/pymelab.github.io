@@ -31,6 +31,20 @@ header h1 {
   margin: 0;
 }
 
+header .logo-left,
+header .logo-right {
+  width: 200px; 
+  height: auto;
+}
+
+header .logo-left {
+  margin-right: auto; 
+}
+
+header .logo-right {
+  margin-left: auto; 
+}
+
 .menu-toggle {
   display: none;
   font-size: 2rem;
@@ -243,7 +257,6 @@ model-viewer {
   }
 }
 
-/* Adaptaciones para dispositivos pequeños */
 @media (max-width: 480px) {
   body {
     font-size: 14px;

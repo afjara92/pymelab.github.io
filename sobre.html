@@ -55,11 +55,73 @@
                 height: 300px;
             }
         }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: white;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgb(226, 127, 32); 
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Media query para dispositivos pequeños */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block; /* Muestra el botón de menú */
+            }
+
+            nav ul {
+                display: none; /* Oculta el menú por defecto */
+                flex-direction: column;
+                background-color: rgb(41, 63, 118);
+                padding: 10px;
+            }
+
+            nav ul.active {
+                display: flex; /* Muestra el menú cuando está activo */
+            }
+
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Edificio Experimental PymeLab</h1>
+        <h1>Torre CLT PymeLab</h1>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -89,5 +151,11 @@
             </div>
         </section>
     </main>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
