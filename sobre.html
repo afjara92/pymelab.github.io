@@ -8,63 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-    
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .text-column, .model-column {
-            width: 100%; 
-            max-width: 1000px; 
-        }
-    
-        .project-image {
-            width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-        }
-    
-        .description {
-            font-size: 16px;
-            color: #333;
-        }
-
-        model-viewer {
-            width: 100%;
-            height: 500px;
-            background-color: #f4f4f4;
-        }
-
-        @media (max-width: 768px) {
-            model-viewer {
-                height: 400px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            model-viewer {
-                height: 300px;
-            }
-        }
-
         .menu-toggle {
             display: none;
-            font-size: 2rem;
+            font-size: 3rem;
             background: none;
             border: none;
             color: white;
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 35px;
+            right: 10px;
             cursor: pointer;
         }
 
@@ -94,21 +46,20 @@
             border-radius: 5px;
         }
 
-        /* Media query para dispositivos pequeños */
         @media (max-width: 768px) {
             .menu-toggle {
-                display: block; /* Muestra el botón de menú */
+                display: block; 
             }
 
             nav ul {
-                display: none; /* Oculta el menú por defecto */
+                display: none; 
                 flex-direction: column;
                 background-color: rgb(41, 63, 118);
                 padding: 10px;
             }
 
             nav ul.active {
-                display: flex; /* Muestra el menú cuando está activo */
+                display: flex; 
             }
 
             nav ul li {
@@ -116,6 +67,25 @@
                 margin: 10px 0;
             }
         }
+            .project-image {
+            width: 100%; 
+            height: auto; 
+            max-width: 1800px; 
+            border-radius: 8px;
+            margin: 0 auto 15px auto;
+        }
+
+@media (max-width: 768px) {
+    .project-image {
+        max-width: 90%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .project-image {
+        max-width: 100%; 
+    }
+}
     </style>
 </head>
 <body>
@@ -123,7 +93,7 @@
         <h1>Torre CLT PymeLab</h1>
         <button class="menu-toggle" aria-label="Toggle menu">☰</button>
         <nav>
-            <ul>
+            <ul class="menu">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="sobre.html">Sobre PymeLab</a></li>
                 <li><a href="galeria.html">Galería</a></li>
@@ -151,7 +121,6 @@
             </div>
         </section>
     </main>
-
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('nav ul').classList.toggle('active');
