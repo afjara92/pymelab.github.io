@@ -13,41 +13,60 @@ body {
   font-weight: normal;
   font-style: normal;
 }
-
 header {
   background-color: rgb(41, 63, 118); 
   color: white;
-  padding: 2.5rem 1.5rem; 
+  padding: 1.5rem; 
+  font-size: 1rem;
   text-align: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header h1 {
   font-family: 'Florida Vibes', serif;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 500;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin: 0;
 }
 
+nav {
+  margin-top: 4rem; 
+}
+
+
 .logo-left {
   position: absolute;
   left: 10px;
-  top: 50%;
+  top: 35%;
   transform: translateY(-50%);
-  width: 120px;
+  width: 150px;
+  height: auto;
+}
+
+.logo-right {
+  position: absolute;
+  right: 10px; 
+  top: 40%;
+  transform: translateY(-50%);
+  width: 150px;
   height: auto;
 }
 
 @media (max-width: 768px) {
-  .logo-left {
-    display: none;
+  .logo-left, .logo-right {
+    display: none; 
   }
-  .logo-left.show-logo {
-    display: block;
+  .logo-left.show-logo,
+  .logo-right.show-logo {
+    display: block; 
   }
 }
+
 
 .menu-toggle {
   display: none;
@@ -55,10 +74,11 @@ header h1 {
   background: none;
   border: none;
   color: white;
-  position: absolute;
-  top: 50px;
-  right: 5px;
   cursor: pointer;
+  position: absolute;
+  top: 100px; 
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 nav ul {
