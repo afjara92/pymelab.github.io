@@ -258,22 +258,22 @@ model-viewer {
 
   .menu-toggle {
     display: block;
-    margin-top: 10px;
+    margin-top: 1px;
 
   }
 
   .logo-left, .logo-right {
-    width: 80px; 
+    width: 75px; 
     height: auto;
-    top: 80px; 
+    top: 60px; 
   }
 
   .logo-left {
-    left: 10px; 
+    left: 4px; 
   }
 
   .logo-right {
-    right: 10px; 
+    right: 4px; 
   }
 
   header h1 {
