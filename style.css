@@ -14,6 +14,16 @@ body {
   font-style: normal;
 }
 
+.team-member a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+.team-member a:hover {
+  text-decoration: underline; 
+}
+ /*Esto es para temas generales */
+
 header {
   background-color: rgb(41, 63, 118); 
   color: white;
@@ -210,12 +220,39 @@ a.button:hover {
 model-viewer {
   display: block;
   width: 100%;
-  height: 500px;
+  height: 800px;
   background-color: #f4f4f4;
 }
 
+ /*Esto es para la secicon de fotos */
 
 
+.modal-content {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;  
+  height: 90vh; 
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; 
+}
+ /*Esto es para la secicon de noticias */
+.noticia {
+  max-width: 100%;  
+  overflow: hidden; 
+  text-align: center;
+}
+
+.noticia img {
+  width: 100%;   
+  height: auto;  
+  max-width: 2000px; 
+}
 .menu-toggle-checkbox {
   display: none;
 }
@@ -235,6 +272,7 @@ model-viewer {
 
 
 
+ /*Esto es para la secicon de dispositivos moviles */
 
 @media (max-width: 768px) {
   .content {
