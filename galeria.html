@@ -68,6 +68,24 @@
             color: #bbb;
             cursor: pointer;
         }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 40px;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            user-select: none;
+            transform: translateY(-50%);
+        }
+
+        .arrow.left {
+            left: 20px;
+        }
+
+        .arrow.right {
+            right: 20px;
+        }
 
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -128,29 +146,37 @@
     
     <div id="myModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
+        <span class="arrow left" onclick="showPrevImage()">&#10094;</span>
         <div class="modal-content">
             <img id="modalImage">
         </div>
+        <span class="arrow right" onclick="showNextImage()">&#10095;</span>
     </div>
-
+    
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', function() {
           document.querySelector('nav ul').classList.toggle('active');
           //document.querySelector('.logo-left').classList.toggle('show-logo');
           //document.querySelector('.logo-right').classList.toggle('show-logo');
         });
+        const modal = document.getElementById("myModal");
+        const modalImage = document.getElementById("modalImage");
         let currentImageIndex = 0;
         const images = document.querySelectorAll('.gallery img');
 
         function openModal(index) {
             currentImageIndex = index;
-            document.getElementById("myModal").style.display = "block";
-            document.getElementById("modalImage").src = images[currentImageIndex].src;
+            modal.style.display = "flex";
+            updateModalImage();
             document.addEventListener('keydown', handleKeyDown);
         }
 
+        function updateModalImage() {
+            modalImage.src = images[currentImageIndex].src;
+        }
+
         function closeModal() {
-            document.getElementById("myModal").style.display = "none";
+            modal.style.display = "none";
             document.removeEventListener('keydown', handleKeyDown);
         }
 
@@ -166,12 +192,12 @@
 
         function showNextImage() {
             currentImageIndex = (currentImageIndex + 1) % images.length;
-            document.getElementById("modalImage").src = images[currentImageIndex].src;
+            updateModalImage();
         }
 
         function showPrevImage() {
             currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            document.getElementById("modalImage").src = images[currentImageIndex].src;
+            updateModalImage();
         }
     </script>
 </body>
