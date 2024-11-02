@@ -224,7 +224,6 @@ model-viewer {
   background-color: #f4f4f4;
 }
 
- /*Esto es para la secicon de fotos */
 
 
 .modal-content {
@@ -270,7 +269,16 @@ model-viewer {
   display: none;
 }
 
+canvas {
+  display: block;
+  width: 100%;
+  height: 50px;
+}
 
+.chart-container {
+  width: 100%;
+  height: auto;
+}
 
  /*Esto es para la secicon de dispositivos moviles */
 
@@ -340,6 +348,17 @@ model-viewer {
     display: block;
     margin: 10px 0;
   }
+  .chart-container {
+    width: 100%;
+    padding: 0 10px; 
+  }
+
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+
 }
 
 @media (max-width: 480px) {
@@ -368,4 +387,16 @@ model-viewer {
     max-width: 100%;
     height: auto;
   }
+
+  .chart-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+
 }

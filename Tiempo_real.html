@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edificio Experimental PymeLab</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="logo_CLT.png" alt="Logo CLT" class="logo-left">
+        <h1>Torre CLT PymeLab</h1>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+        <label for="menu-toggle" class="menu-toggle" aria-label="Toggle menu">☰</label>
+        <img src="escudo-monocromatico-oscuro.png" alt="Ubb" class="logo-right">
+
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre.html">Sobre PymeLab</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="noticias.html">Resultados</a></li>
+                <li><a href="equipo.html">Equipo</a></li>
+                <li><a href="investigacion.html">Publicaciones</a></li>
+                <li><a href="Tiempo_real.html">En vivo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+    <section>
+    <div class="raspberry-shake">
+        <h2>Sensor en el 5° piso - Señales de Raspberry Shake</h2>
+        
+        <div class="signal">
+            <h3>Dirección Este-Oeste (ENE)</h3>
+            <iframe width="100%" height="350" src="https://dataview.raspberryshake.org/#/embed/AM/RFE21/00/ENE"></iframe>
+        </div>
+        
+        <div class="signal">
+            <h3>Dirección Norte-Sur (ENN)</h3>
+            <iframe width="100%" height="350" src="https://dataview.raspberryshake.org/#/embed/AM/RFE21/00/ENN"></iframe>
+        </div>
+        
+        <div class="signal">
+            <h3>Dirección Vertical (EHZ)</h3>
+            <iframe width="100%" height="350" src="https://dataview.raspberryshake.org/#/embed/AM/RFE21/00/EHZ"></iframe>
+        </div>
+    </div>
+        </section>
+    </main>
+
+    <div class="derechos">
+        <p>Derechos reservados, creados por AJC 2024</p>
+    </div>
+</body>
+</html>
