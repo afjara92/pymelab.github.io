@@ -60,19 +60,22 @@
     <script>
         let chart;  
         const frecuenciaMuestreo = 100; 
-
+    
         async function mostrarGrafico() {
             const eventoSeleccionado = document.getElementById("evento-sismico").value;
             if (!eventoSeleccionado) return;
-
+    
             const response = await fetch(eventoSeleccionado);
             const data = await response.json();
-
+    
             const tiempoEnSegundos = data.norte_sur.map((_, index) => (index / frecuenciaMuestreo).toFixed(2));
-
+    
             if (chart) chart.destroy();
-
+    
             const ctx = document.getElementById("grafico").getContext("2d");
+    
+            const isSmallScreen = window.innerWidth <= 480;
+    
             chart = new Chart(ctx, {
                 type: "line",
                 data: {
@@ -106,6 +109,21 @@
                 },
                 options: {
                     responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: isSmallScreen ? 'top' : 'right',
+                            labels: {
+                                font: {
+                                    size: isSmallScreen ? 8 : 12
+                                },
+                                padding: isSmallScreen ? 5 : 10, 
+                                boxWidth: isSmallScreen ? 10 : 20, 
+                                boxHeight: isSmallScreen ? 10 : 20,
+                                usePointStyle: true, 
+                            }
+                        }
+                    },
                     scales: {
                         x: { 
                             title: { display: true, text: "Tiempo (s)" },

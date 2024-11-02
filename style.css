@@ -350,7 +350,6 @@ canvas {
   }
   .chart-container {
     width: 100%;
-    padding: 0 10px; 
   }
 
   canvas {
@@ -387,16 +386,15 @@ canvas {
     max-width: 100%;
     height: auto;
   }
-
   .chart-container {
-    width: 100%;
-    padding: 0 10px;
-  }
+    width: 130%;
+    padding-top: 20px;
+    margin-left: -35px;
+    max-height: 600px; 
+}
 
-  canvas {
+canvas {
     width: 100% !important;
-    height: auto !important;
-  }
-
-
+    height: auto !important; 
+}
 }
