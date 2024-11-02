@@ -48,8 +48,14 @@
             </select>
     
             <div class="chart-container">
-                <canvas id="grafico"></canvas>
-            </div>
+                <canvas id="graficoNS"></canvas>
+              </div>
+              <div class="chart-container">
+                <canvas id="graficoEO"></canvas>
+              </div>
+              <div class="chart-container">
+                <canvas id="graficoUD"></canvas>
+              </div>
         </section>
     </main>
 
@@ -58,72 +64,114 @@
     </div>
 
     <script>
-        let chart;  
+        let chartNS, chartEO, chartUD;  
         const frecuenciaMuestreo = 100; 
-    
+
         async function mostrarGrafico() {
             const eventoSeleccionado = document.getElementById("evento-sismico").value;
             if (!eventoSeleccionado) return;
-    
+
             const response = await fetch(eventoSeleccionado);
             const data = await response.json();
-    
+
             const tiempoEnSegundos = data.norte_sur.map((_, index) => (index / frecuenciaMuestreo).toFixed(2));
-    
-            if (chart) chart.destroy();
-    
-            const ctx = document.getElementById("grafico").getContext("2d");
-    
-            const isSmallScreen = window.innerWidth <= 480;
-    
-            chart = new Chart(ctx, {
+
+            if (chartNS) chartNS.destroy();
+            if (chartEO) chartEO.destroy();
+            if (chartUD) chartUD.destroy();
+
+            const ctxNS = document.getElementById("graficoNS").getContext("2d");
+            chartNS = new Chart(ctxNS, {
                 type: "line",
                 data: {
                     labels: tiempoEnSegundos,
-                    datasets: [
-                        {
-                            label: "Norte-Sur",
-                            data: data.norte_sur,
-                            borderColor: "blue",
-                            borderWidth: 0.5,
-                            pointRadius: 0,
-                            fill: false
-                        },
-                        {
-                            label: "Este-Oeste",
-                            data: data.este_oeste,
-                            borderColor: "green",
-                            borderWidth: 0.5,
-                            pointRadius: 0,
-                            fill: false
-                        },
-                        {
-                            label: "Vertical",
-                            data: data.vertical,
-                            borderColor: "red",
-                            borderWidth: 0.5,
-                            pointRadius: 0,
-                            fill: false
-                        }
-                    ]
+                    datasets: [{
+                        label: "Norte-Sur",
+                        data: data.norte_sur,
+                        borderColor: "blue",
+                        borderWidth: 1,
+                        pointRadius: 0,
+                        fill: false
+                    }]
                 },
                 options: {
                     responsive: true,
                     plugins: {
-                        legend: {
-                            display: true,
-                            position: isSmallScreen ? 'top' : 'right',
-                            labels: {
-                                font: {
-                                    size: isSmallScreen ? 8 : 12
-                                },
-                                padding: isSmallScreen ? 5 : 10, 
-                                boxWidth: isSmallScreen ? 10 : 20, 
-                                boxHeight: isSmallScreen ? 10 : 20,
-                                usePointStyle: true, 
+                        legend: { display: false },
+                        title: { display: true, text: 'Aceleración Norte-Sur' }
+                                        },
+                    scales: {
+                        x: { 
+                            title: { display: true, text: "Tiempo (s)" },
+                            ticks: {
+                                autoSkip: true,
+                                maxTicksLimit: 10,
+                                callback: function(value, index, values) {
+                                    return Math.floor(tiempoEnSegundos[index]); 
+                                }
                             }
-                        }
-                    },
+                        },
+                        y: { title: { display: true, text: "Aceleración (g)" } }
+                    }
+                }
+            });
+
+            const ctxEO = document.getElementById("graficoEO").getContext("2d");
+            chartEO = new Chart(ctxEO, {
+                type: "line",
+                data: {
+                    labels: tiempoEnSegundos,
+                    datasets: [{
+                        label: "Este-Oeste",
+                        data: data.este_oeste,
+                        borderColor: "green",
+                        borderWidth: 1,
+                        pointRadius: 0,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: true, text: 'Aceleración Este-Oeste' }
+                                        },
+                    scales: {
+                        x: { 
+                            title: { display: true, text: "Tiempo (s)" },
+                            ticks: {
+                                autoSkip: true,
+                                maxTicksLimit: 10,
+                                callback: function(value, index, values) {
+                                    return Math.floor(tiempoEnSegundos[index]); 
+                                }
+                            }
+                        },
+                        y: { title: { display: true, text: "Aceleración (g)" } }
+                    }
+                }
+            });
+
+            const ctxUD = document.getElementById("graficoUD").getContext("2d");
+            chartUD = new Chart(ctxUD, {
+                type: "line",
+                data: {
+                    labels: tiempoEnSegundos,
+                    datasets: [{
+                        label: "Vertical",
+                        data: data.vertical,
+                        borderColor: "red",
+                        borderWidth: 1,
+                        pointRadius: 0,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: true, text: 'Vertical' }
+                                        },
                     scales: {
                         x: { 
                             title: { display: true, text: "Tiempo (s)" },
