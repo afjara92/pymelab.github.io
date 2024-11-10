@@ -94,15 +94,15 @@ nav ul li a:hover {
 }
 
 main {
-  padding: 2rem;
+  padding: 1rem;
   background-color: #F1F1F1;
 }
 
 section {
   padding: 2rem;
-  margin: 2rem 0;
+  margin: 1rem 0;
   background-color: white;
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
   border-left: 5px solid rgb(41, 63, 118); 
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -282,7 +282,9 @@ canvas {
 
  /*Esto es para la secicon de dispositivos moviles */
 
-@media (max-width: 768px) {
+
+
+@media (max-width: 1024px) {
   .content {
     flex-direction: column;
     align-items: center;
@@ -308,19 +310,19 @@ canvas {
 
   }
 
-  .logo-left, .logo-right {
-    width: 75px; 
-    height: auto;
-    top: 60px; 
-  }
-
   .logo-left {
-    left: 6px; 
+    width: 250px;
+    left: 4px; 
+    height: auto;
+    top: 80px; 
   }
 
   .logo-right {
+    width: 125px;
     right: 4px; 
-  }
+    height: auto;
+    top: 80px; 
+    }
 
   header h1 {
     margin-top: 10px; 
@@ -360,55 +362,238 @@ canvas {
 
 }
 
-@media (max-width: 480px) {
 
-  .logo-left {
-    width: 120px;
-    left: 4px; 
-    height: auto;
-    top: 60px; 
-  }
-
-  .logo-right {
-    width: 75px;
-    right: 4px; 
-    height: auto;
-    top: 60px; 
-    }
-  body {
-    font-size: 14px;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  section h2, .text-and-video h2 {
-    font-size: 1.8rem;
-  }
-
-  section p, .description, .text-and-video p {
-    font-size: 1rem;
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
   }
 
   .content img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
+  }
+
+  .text-and-video {
+    max-width: 100%;
+    margin-left: 0;
   }
 
   .text-and-video iframe {
     max-width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-top: 1px;
+
+  }
+
+  .logo-left {
+    width: 240px;
+    left: 4px; 
     height: auto;
+    top: 80px; 
+  }
+
+  .logo-right {
+    width: 125px;
+    right: 4px; 
+    height: auto;
+    top: 80px; 
+    }
+
+  header h1 {
+    margin-top: 10px; 
+    font-size: 2.3rem;
+  }
+
+  nav ul.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 10px;
+    background-color: rgb(41, 63, 118);
+    overflow: hidden;
+    max-height: 0; 
+    opacity: 0;    
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+  }
+
+  .menu-toggle-checkbox:checked ~ nav ul.menu {
+    max-height: 500px; 
+    opacity: 1;
+  }
+
+  nav ul.menu li {
+    display: block;
+    margin: 10px 0;
   }
   .chart-container {
-    width: 125%;
-    padding-top: 20px;
-    margin-left: -35px;
-    max-height: 600px; 
+    width: 100%;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+
 }
 
-canvas {
+
+@media (max-width: 600px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .text-and-video {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .text-and-video iframe {
+    max-width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-top: 1px;
+
+  }
+
+  .logo-left {
+    width: 200px;
+    left: 0px; 
+    height: auto;
+    top: 80px; 
+  }
+
+  .logo-right {
+    width: 100px;
+    right: 4px; 
+    height: auto;
+    top: 80px; 
+    }
+
+  header h1 {
+    margin-top: 10px; 
+    font-size: 1.9rem;
+  }
+
+  nav ul.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 10px;
+    background-color: rgb(41, 63, 118);
+    overflow: hidden;
+    max-height: 0; 
+    opacity: 0;    
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+  }
+
+  .menu-toggle-checkbox:checked ~ nav ul.menu {
+    max-height: 500px; 
+    opacity: 1;
+  }
+
+  nav ul.menu li {
+    display: block;
+    margin: 10px 0;
+  }
+  .chart-container {
+    width: 100%;
+  }
+
+  canvas {
     width: 100% !important;
-    height: auto !important; 
+    height: auto !important;
+  }
+
+
 }
+
+@media (max-width: 480px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .text-and-video {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .text-and-video iframe {
+    max-width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-top: 1px;
+
+  }
+
+  .logo-left {
+    width: 200px;
+    left: 0px; 
+    height: auto;
+    top: 100px; 
+  }
+
+  .logo-right {
+    width: 100px;
+    right: 4px; 
+    height: auto;
+    top: 100px; 
+    }
+
+  header h1 {
+    margin-top: 10px; 
+    font-size: 1.7rem;
+  }
+
+  nav ul.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 10px;
+    background-color: rgb(41, 63, 118);
+    overflow: hidden;
+    max-height: 0; 
+    opacity: 0;    
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+  }
+
+  .menu-toggle-checkbox:checked ~ nav ul.menu {
+    max-height: 500px; 
+    opacity: 1;
+  }
+
+  nav ul.menu li {
+    display: block;
+    margin: 10px 0;
+  }
+  .chart-container {
+    width: 100%;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+
 }
